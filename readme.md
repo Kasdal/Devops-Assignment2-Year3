@@ -9,5 +9,7 @@ Open a terminal in working dir
 <hr>
 Start by running the following commands
 
-```terraform init
+```
+terraform init
+
 ```
