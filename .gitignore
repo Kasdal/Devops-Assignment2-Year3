@@ -1,2 +1,4 @@
 private-key/web13.pem
 private-key/web13.pem
+.terraform
+.terraform.lock.hcl
