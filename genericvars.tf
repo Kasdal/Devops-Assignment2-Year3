@@ -11,7 +11,7 @@ variable "environment" {
   type = string
   default = "assignemnt2-demo"
 }
-# Business Division
+# Gruop Name
 variable "group" {
   description = "Project group designation"
   type = string
