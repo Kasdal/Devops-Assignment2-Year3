@@ -139,7 +139,7 @@ output "private_subnets" {
 # VPC Public Subnets
 output "public_subnets" {
   description = "List of IDs of public subnets"
-  value       = module.vpc.public_subnet
+  value       = module.vpc.public_subnets
 }
 
 # VPC NAT gateway Public IP
