@@ -22,3 +22,8 @@ provider "aws" {
   region  = var.aws_region
   profile = "default"
 }
+
+# Create Random Pet Resource just for fun :D this will be used to generate a random pet name of a resource
+resource "random_pet" "this" {
+  length = 2
+}
