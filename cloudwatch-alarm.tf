@@ -22,7 +22,7 @@ resource "aws_cloudwatch_metric_alarm" "app1_asg_cwa_cpu" {
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.my_asg.name 
   }
-
+#Send email and scale up when CPU Utilization is above 80%
   alarm_description = "This metric monitors ec2 cpu utilization and triggers the ASG Scaling policy to scale-out if CPU is above 80%"
   
   ok_actions          = [aws_sns_topic.myasg_sns_topic.arn]  
