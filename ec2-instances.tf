@@ -11,6 +11,7 @@ module "ec2_public" {
   #monitoring             = true
   subnet_id              = module.vpc.public_subnets[0]
   vpc_security_group_ids = [module.public_bastion_sg.security_group_id]
+  user_data = file("${path.module}/monitor.sh")
   tags = local.common_tags
 }
 
