@@ -18,7 +18,7 @@ module "ec2_public" {
 
 # EC2 Instances that will be created in VPC Private Subnets
 module "ec2_private" {
-  depends_on = [ module.vpc ] # VERY VERY IMPORTANT else userdata webserver provisioning will fail
+  depends_on = [ module.vpc ] 
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "2.17.0"
   # insert the 10 required variables here
@@ -38,6 +38,23 @@ module "ec2_private" {
   tags = local.common_tags
 }
 
+
+module "ec2_private_DB" {
+  depends_on = [ module.vpc ] 
+  source  = "terraform-aws-modules/ec2-instance/aws"
+  version = "2.17.0"
+  # insert the 10 required variables here
+  name                   = "${var.environment}-db"
+  ami                    = data.aws_ami.amzlinux2.id
+  instance_type          = var.instance_type
+  key_name               = var.instance_keypair
+  #monitoring             = true
+  vpc_security_group_ids = [module.mongo_sg.security_group_id]
+  subnet_id              = module.vpc.public_subnets[0]   
+  instance_count         = var.private_instance_count
+  user_data = file("${path.module}/docker.sh")
+  tags = local.common_tags
+}
 
 
 

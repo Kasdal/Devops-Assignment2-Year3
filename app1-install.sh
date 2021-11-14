@@ -10,3 +10,4 @@ sudo echo '<!DOCTYPE html> <html> <body style="background-color:rgb(250, 210, 21
 sudo curl http://169.254.169.254/latest/dynamic/instance-identity/document -o /var/www/html/app1/metadata.html
 
 
+

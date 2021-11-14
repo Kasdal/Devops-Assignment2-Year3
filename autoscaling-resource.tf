@@ -23,7 +23,7 @@ resource "aws_autoscaling_group" "my_asg" {
   }
   tag {
     key                 = "Owners"
-    value               = "Web-Team"
+    value               = "Milan"
     propagate_at_launch = true
   }
 }
