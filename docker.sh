@@ -5,4 +5,5 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -a -G docker ec2-user
 newgrp docker
-sudo docker pull mongo
+docker pull mongo
+docker run --name Assignment2 -d mongo:latest

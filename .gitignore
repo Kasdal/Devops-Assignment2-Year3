@@ -5,5 +5,4 @@ private-key/web13.pem
 terraform.tfstate.backup
 terraform.tfstate
 web13.pem
-.gitignore
 .terraform.tfstate.lock.info
