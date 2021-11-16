@@ -5,4 +5,4 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -a -G docker ec2-user
 newgrp docker
-docker pull mongo
+sudo docker pull mongo
