@@ -11,5 +11,4 @@ Start by running the following commands
 
 ```
 terraform init
-
 ```
