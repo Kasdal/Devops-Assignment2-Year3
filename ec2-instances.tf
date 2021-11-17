@@ -50,7 +50,7 @@ module "ec2_private_DB" {
   key_name               = var.instance_keypair
   #monitoring             = true
   vpc_security_group_ids = [module.mongo_sg.security_group_id]
-  subnet_id              = module.vpc.public_subnets[0]   
+  subnet_id              = module.vpc.database_subnets[0]   
   instance_count         = var.private_instance_count
   user_data = file("${path.module}/docker.sh")
   tags = local.common_tags
