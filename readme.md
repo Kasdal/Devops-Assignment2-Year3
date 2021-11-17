@@ -1,5 +1,9 @@
 ## Features
-- Infrastructure as code ready to deploy
+- Assignment 2 for Dev-ops module in Yr3.
+- Nedded to create new VPC, EIP, Private and Public subnets, appropriate SG.
+- Public Bastion acess
+- ASG, LB.
+- As an added bonus i created the whole project in terraform, added DB subnets, docker and mongo.
 
 ##
 ### ✅  Step-by-step Instructions
@@ -12,3 +16,8 @@ Start by running the following commands
 ```
 terraform init
 ```
+Followed by 
+```
+terraform apply
+```
+
