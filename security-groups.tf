@@ -27,6 +27,14 @@ module "private_sg" {
   vpc_id = module.vpc.vpc_id
   # Ingress Rules & CIDR Blocks
   ingress_rules = ["ssh-tcp", "http-80-tcp", "http-8080-tcp"]
+    ingress_with_cidr_blocks = [
+    {
+      from_port   = 9100
+      to_port     = 9100
+      protocol    = "tcp"
+      description = "node export port open"
+    },
+  ]
   #Allows access from entire VPC block only.
   ingress_cidr_blocks = [module.vpc.vpc_cidr_block]
   # Egress Rule - all-all open

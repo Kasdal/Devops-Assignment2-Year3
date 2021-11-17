@@ -10,7 +10,7 @@ locals {
 
   asg_tags = [
     {
-      key                 = "Project"
+      key                 = "Demo"
       value               = "megasecret"
       propagate_at_launch = true
     },
