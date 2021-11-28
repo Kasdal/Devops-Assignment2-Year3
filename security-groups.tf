@@ -27,14 +27,6 @@ module "private_sg" {
   vpc_id = module.vpc.vpc_id
   # Ingress Rules & CIDR Blocks
   ingress_rules = ["ssh-tcp", "http-80-tcp", "http-8080-tcp"]
-    ingress_with_cidr_blocks = [
-    {
-      from_port   = 9100
-      to_port     = 9100
-      protocol    = "tcp"
-      description = "node export port open"
-    },
-  ]
   #Allows access from entire VPC block only.
   ingress_cidr_blocks = [module.vpc.vpc_cidr_block]
   # Egress Rule - all-all open
@@ -49,8 +41,8 @@ module "mongo_sg" {
   name = "mongo-sg"
   description = "Security Group with 27017 port open for entire VPC Block (IPv4 CIDR), egress ports are all world open"
   vpc_id = module.vpc.vpc_id
-  # Ingress Rules & CIDR Blocks
-  ingress_rules = ["mongodb-27017-tcp", "mongodb-27018-tcp", "mongodb-27019-tcp"]
+  # Ingress Rules & CIDR Blocks for mongo db port 27017
+  ingress_rules = ["mongodb-27017-tcp"]
   #Allows access from entire VPC block only.
   ingress_cidr_blocks = [module.vpc.vpc_cidr_block]
   # Egress Rule - all-all open

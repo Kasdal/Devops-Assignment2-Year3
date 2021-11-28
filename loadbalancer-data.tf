@@ -6,10 +6,6 @@ module "alb" {
   name = "${local.name}-alb"
   load_balancer_type = "application"
   vpc_id = module.vpc.vpc_id
-  /*Optionally, you can specify the subnets individually
-    module.vpc.public_subnets[0],
-    module.vpc.public_subnets[1]
-  ]*/
   subnets = module.vpc.public_subnets
   security_groups = [module.loadbalancer_sg.security_group_id]
   # Listeners
@@ -47,10 +43,6 @@ module "alb" {
  
   tags = local.common_tags # ALB Tags
 }
-
-
-
-
 
 
 # Terraform AWS Application Load Balancer (ALB) Outputs
