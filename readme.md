@@ -20,4 +20,5 @@ Followed by
 ```
 terraform apply
 ```
+For the project to work fully on your end you will need to create your own AWS account and secret key. 
 
